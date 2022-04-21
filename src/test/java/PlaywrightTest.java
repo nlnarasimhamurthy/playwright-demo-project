@@ -1,5 +1,4 @@
-import java.awt.Color;
-
+import org.testng.annotations.Test;
 import com.microsoft.playwright.*;
 import com.microsoft.playwright.Locator.GetAttributeOptions;
 import com.microsoft.playwright.Page.ScreenshotOptions;
@@ -7,8 +6,8 @@ import com.microsoft.playwright.Playwright.CreateOptions;
 
 public class PlaywrightTest {
 
-	public static void main(String[] args) throws InterruptedException {
-		// TODO Auto-generated method stub
+	@Test
+	public void testPlayWrightActions() {
 		Playwright playwright = Playwright.create(); 
 		Browser browser = playwright.firefox().launch(new BrowserType.LaunchOptions().setHeadless(false));
 		Page page = browser.newPage();
