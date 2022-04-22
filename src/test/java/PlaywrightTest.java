@@ -1,4 +1,5 @@
 import org.testng.annotations.Test;
+import org.testng.annotations.Test;
 import com.microsoft.playwright.*;
 import com.microsoft.playwright.Locator.GetAttributeOptions;
 import com.microsoft.playwright.Page.ScreenshotOptions;
@@ -9,7 +10,7 @@ public class PlaywrightTest {
 	@Test
 	public void testPlayWrightActions() {
 		Playwright playwright = Playwright.create(); 
-		Browser browser = playwright.firefox().launch(new BrowserType.LaunchOptions().setHeadless(false));
+		Browser browser = playwright.webkit().launch(new BrowserType.LaunchOptions().setHeadless(false));
 		Page page = browser.newPage();
 		page.setViewportSize(1250,720);
 		page.navigate("https://demo.actitime.com");
@@ -26,7 +27,12 @@ public class PlaywrightTest {
 				System.out.print(page.locator("//a").nth(i).getAttribute("id")+" ");
 				System.out.print(page.locator("//a").nth(i).getAttribute("value")+" \n");
 				page.locator("//a").nth(i).highlight();
-				Thread.sleep(3000L);
+				try {
+					Thread.sleep(3000L);
+				} catch (InterruptedException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
 			}
 		}
 		//elements.allTextContents().stream().forEach(o->System.out.println(o));
