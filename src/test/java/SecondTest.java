@@ -1,21 +1,20 @@
-import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
-import org.testng.annotations.Test;
-import com.microsoft.playwright.*;
-import com.microsoft.playwright.Locator.GetAttributeOptions;
-import com.microsoft.playwright.Page.ScreenshotOptions;
-import com.microsoft.playwright.Playwright.CreateOptions;
 
-public class PlaywrightTest extends BaseTest {
+import com.microsoft.playwright.Browser;
+import com.microsoft.playwright.BrowserType;
+import com.microsoft.playwright.Page;
+import com.microsoft.playwright.Playwright;
 
+public class SecondTest extends BaseTest{
+	
 	@Test
 	public void testPlayWrightActions() {
 		page.setViewportSize(1250,720);
 		page.navigate("https://demo.actitime.com");
 		page.locator("input[name='username']").highlight();
-		page.type("input[name='username']", "admin");
+		page.type("input[name='username']", "trainee");
 		page.locator("input[name='pwd']").highlight();
-		page.type("input[name='pwd']", "manager");
+		page.type("input[name='pwd']", "trainee");
 		page.locator("#loginButton").highlight();
 		page.click("#loginButton");
 		for(int i=0; i<page.locator("//a").elementHandles().size(); i++) {
@@ -34,30 +33,7 @@ public class PlaywrightTest extends BaseTest {
 			}
 		}
 		//elements.allTextContents().stream().forEach(o->System.out.println(o));
-		page.click("a[id='logoutLink']:right-of(:text('John Doe'))");
+		page.click("a[id='logoutLink']");
 		System.out.println(page.title());
-
-		/*
-		Playwright playwright = Playwright.create();
-		//Browser browser = playwright.firefox().launch(new BrowserType.LaunchOptions().setHeadless(false));
-		Browser browser = playwright.chromium().launch();
-		Page page = browser.newPage();
-		page.navigate("https://demo.actitime.com");
-		page.type("username", "admin");
-		page.type("pwd", "manager");
-		page.click("#loginButton");*/
-
-	}
-
-	
-	@Test
-	public void test2() {
-		System.out.println("This is test 2");
-	}
-	
-	
-	@Test
-	public void test3() {
-		System.out.println("This is test 3");
 	}
 }
