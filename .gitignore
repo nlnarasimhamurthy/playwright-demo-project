@@ -1,0 +1,6 @@
+.classpath
+.project
+.settings/
+inject-playwright-inspector - Copy.bat
+target/
+test-output/
