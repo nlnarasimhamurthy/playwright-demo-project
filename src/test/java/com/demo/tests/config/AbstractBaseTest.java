@@ -1,5 +1,7 @@
 package com.demo.tests.config;
 
-public class AbstractBaseTest {
+import com.microsoft.playwright.Page;
+
+public abstract class AbstractBaseTest {
 
 }
