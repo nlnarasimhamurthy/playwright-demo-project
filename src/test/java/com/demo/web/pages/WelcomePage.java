@@ -10,7 +10,12 @@ public class WelcomePage extends BasePage {
 	}
 
 	public LoginPage logout() {
-		//getPage().click("a[id='logoutLink']:right-of(:text('John Doe'))");
+		try {
+			getPage().locator("#closeProjectLightBoxBtn").click();
+		}
+		catch(Exception e) {
+			e.printStackTrace();
+		}
 		getPage().click("a[id='logoutLink']");
 		System.out.println(getPage().title());
 		return new LoginPage(getPage());

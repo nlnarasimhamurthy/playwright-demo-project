@@ -11,6 +11,7 @@
       <class name="com.demo.web.tests.ThirdTest"/>
       <class name="com.demo.web.tests.FourthTest"/>
       <class name="com.demo.web.tests.FifthTest"/>
+      <class name="com.demo.web.tests.SixthTest"/>
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->

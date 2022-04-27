@@ -10,7 +10,7 @@ public class BrowserApp {
 
 	public static HashMap<Object, Object> startInstance() {
 		Playwright playwright = Playwright.create();
-		Browser browser = playwright.webkit().launch(new BrowserType.LaunchOptions().setHeadless(false));
+		Browser browser = playwright.webkit().launch(new BrowserType.LaunchOptions().setHeadless(true));
 		Page page = browser.newPage();
 		HashMap<Object, Object> map = new HashMap<>();
 		map.put("playwright", playwright);
