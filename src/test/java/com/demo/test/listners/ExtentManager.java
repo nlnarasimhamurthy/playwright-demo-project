@@ -11,7 +11,7 @@ public class ExtentManager {
     private static ExtentReports extent;
     private static String reportFileName = "Test-Automaton-Report"+".html";
     private static String fileSeperator = System.getProperty("file.separator");
-    private static String reportFilepath = System.getProperty("user.dir") + "/test-output"+ fileSeperator;
+    private static String reportFilepath = System.getProperty("user.dir") + "/";
     private static String reportFileLocation =  reportFilepath +fileSeperator+ reportFileName;
   
  
