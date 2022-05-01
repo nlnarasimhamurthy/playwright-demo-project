@@ -1,6 +1,7 @@
 package com.demo.web.pages;
 
 import com.microsoft.playwright.Page;
+import com.microsoft.playwright.ElementHandle.WaitForSelectorOptions;
 
 public class WelcomePage extends BasePage {
 	
@@ -11,6 +12,7 @@ public class WelcomePage extends BasePage {
 
 	public LoginPage logout() {
 		try {
+			//getPage().waitForSelector("#closeProjectLightBoxBtn").;
 			getPage().locator("#closeProjectLightBoxBtn").click();
 		}
 		catch(Exception e) {
